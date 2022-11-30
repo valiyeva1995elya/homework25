@@ -4,21 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nerko+One&family=Neuton:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap"
+        rel="stylesheet">
 </head>
 <style>
+    body {
+        display: flex;
+        margin: 20px 50px;
+
+    }
+
+    .text {
+        font-family: 'Nerko One', cursive;
+        font-size: 40px;
+    }
+
     .block {
         width: 244px;
         height: 48px;
         background-color: yellow;
+        margin-left: 50px;
     }
 
     img {
         margin: -2px;
         width: 50px;
     }
-    .block2{
+
+    .block2 {
         background-color: transparent;
         width: 318px;
         height: 50px;
@@ -26,7 +44,7 @@
 </style>
 
 <body>
-    <p>1</p>
+    <div class="text">1</div>
     <div class="block">
         <div class="block2">
             <img id="one" src="./img/new-star.png" alt="">
@@ -37,13 +55,19 @@
         </div>
     </div>
     <script>
-
-        let res = document.querySelector("p")
-        let block = document.querySelector("block")
-        console.log(res)
-        if (Math.floor(res) == 1) {
-            div.style.width = "20px"
-        }
+        let a = 0.4
+        let res = document.querySelector(".text")
+        let block = document.querySelector(".block")
+        res.textContent = a
+        if (a >= 3) {
+            block.style.width = ` ${(100 * a / 5) * 244 / 100 + 3}px `
+        }else if (a >= 2 && a < 3) {
+            block.style.width = ` ${(100 * a / 5) * 244 / 100 + 1}px `
+        }else if (a < 1 ) {
+            block.style.width = ` ${(100 * a / 5) * 244 / 100 - 2}px `
+        }else {
+            block.style.width = ` ${(100 * a / 5) * 244 / 100}px `
+        }       
     </script>
 </body>
 
